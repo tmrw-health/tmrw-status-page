@@ -22,6 +22,17 @@ status-website:
       href: /
     - title: TMRW
       href: https://www.startmytomorrow.com
+  theme: light
+  css: |
+    :root {
+      --nav-current-border-bottom-color: #500000;
+      --up-border-left-color: #05a52a;
+      --tag-up-background-color: #05a52a;
+      --down-border-left-color: #ef4444;
+      --tag-down-background-color: #ef4444;
+      --degraded-border-left-color: #d1ab00;
+      --tag-degraded-background-color: #d1ab00;
+    }
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
