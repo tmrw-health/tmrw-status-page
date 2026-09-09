@@ -14,6 +14,7 @@ status-website:
   cname: status.startmytomorrow.com
   # baseUrl: /tmrw-status-page
   logoUrl: https://www.startmytomorrow.com/design/tmrw_icon_main.png
+  favicon: https://www.startmytomorrow.com/design/tmrw_icon_main.png
   name: TMRW Status
   introTitle: "**TMRW** system status"
   introMessage: Live status and incident history for TMRW's app and API.
