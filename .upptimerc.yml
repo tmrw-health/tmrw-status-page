@@ -32,7 +32,7 @@ status-website:
       --tag-down-background-color: #ef4444;
       --degraded-border-left-color: #d1ab00;
       --tag-degraded-background-color: #d1ab00;
-      --graph-filter: hue-rotate(-155deg) saturate(1.4) brightness(0.65);
+      --graph-filter: hue-rotate(-155deg);
     }
     /* Upptime's own article .graph rule can't match its compiled markup (.graph sits on the article itself) */
     .graph {
