@@ -13,8 +13,9 @@ status-website:
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   cname: status.startmytomorrow.com
   # baseUrl: /tmrw-status-page
-  logoUrl: https://www.startmytomorrow.com/design/tmrw_icon_main.png
-  favicon: https://www.startmytomorrow.com/design/tmrw_icon_main.png
+  logoUrl: https://www.startmytomorrow.com/icon0.svg
+  favicon: https://www.startmytomorrow.com/icon1.png
+  faviconSvg: https://www.startmytomorrow.com/icon0.svg
   name: TMRW Status
   introTitle: "**TMRW** system status"
   introMessage: Live status and incident history for TMRW's app and API.
