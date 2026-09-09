@@ -11,8 +11,8 @@ sites:
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  # cname: status.startmytomorrow.com
-  baseUrl: /tmrw-status-page
+  cname: status.startmytomorrow.com
+  # baseUrl: /tmrw-status-page
   logoUrl: https://www.startmytomorrow.com/design/tmrw_icon_main.png
   name: TMRW Status
   introTitle: "**TMRW** system status"
