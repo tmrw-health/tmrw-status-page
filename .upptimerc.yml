@@ -26,17 +26,12 @@ status-website:
   css: |
     :root {
       --nav-current-border-bottom-color: #500000;
-      --up-border-left-color: #500000;
+      --up-border-left-color: #05a52a;
       --tag-up-background-color: #05a52a;
       --down-border-left-color: #ef4444;
       --tag-down-background-color: #ef4444;
       --degraded-border-left-color: #d1ab00;
       --tag-degraded-background-color: #d1ab00;
-      --graph-filter: hue-rotate(-155deg);
-    }
-    /* Upptime's own article .graph rule can't match its compiled markup (.graph sits on the article itself) */
-    .graph {
-      filter: var(--graph-filter);
     }
 
 # Upptime also supports notifications, assigning issues, and more
