@@ -26,12 +26,13 @@ status-website:
   css: |
     :root {
       --nav-current-border-bottom-color: #500000;
-      --up-border-left-color: #05a52a;
+      --up-border-left-color: #500000;
       --tag-up-background-color: #05a52a;
       --down-border-left-color: #ef4444;
       --tag-down-background-color: #ef4444;
       --degraded-border-left-color: #d1ab00;
       --tag-degraded-background-color: #d1ab00;
+      --graph-filter: hue-rotate(-155deg) saturate(1.4) brightness(0.65);
     }
 
 # Upptime also supports notifications, assigning issues, and more
