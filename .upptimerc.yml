@@ -17,8 +17,8 @@ status-website:
   favicon: https://www.startmytomorrow.com/icon1.png
   faviconSvg: https://www.startmytomorrow.com/icon0.svg
   name: TMRW Status
-  introTitle: "**TMRW** system status"
-  introMessage: Live status and incident history for TMRW's app and API.
+  introTitle: "Welcome to **TMRW**'s status page hub"
+  introMessage: Below you'll find status information for our Member Dashboard and Core API.
   navbar:
     - title: Status
       href: /
