@@ -52,7 +52,7 @@ status-website:
     :root {
       --tmrw-ink: #131313;
       --tmrw-line: #eaeaea;
-      --tmrw-subtle: #808080;
+      --tmrw-subtle: #767676;
       --tmrw-accent: #500000;
       --tmrw-up: #003d1c;
       --tmrw-degraded: #9d8000;
@@ -193,8 +193,8 @@ status-website:
       color: #000;
     }
 
-    /* Standalone summary line reads as a statement, not a card */
-    main > article {
+    /* All-clear line reads as a statement; incidents keep card styling */
+    main > article.up:not(.link) {
       border: 0;
       padding: 0;
       margin: 0 0 4rem 0;
@@ -204,7 +204,7 @@ status-website:
       text-transform: uppercase;
       color: #000;
     }
-    main > article::before {
+    main > article.up:not(.link)::before {
       content: "";
       display: inline-block;
       width: 9px;
@@ -214,12 +214,8 @@ status-website:
       vertical-align: 0.15em;
       background: var(--tmrw-up);
     }
-    main > article.down::before {
-      background: var(--tmrw-down);
-    }
-
     /* Cards */
-    section article {
+    article {
       border-radius: 0;
       border: 1px solid var(--tmrw-line);
       padding: 1.5rem;
@@ -308,8 +304,8 @@ status-website:
       filter: grayscale(1) opacity(0.3);
     }
 
-    /* Masking needs a CORS fetch, so it only engages once the js hook lands */
-    .tmrw-mask section article.graph::after {
+    /* Masking needs a CORS fetch, so it engages per graph once that fetch lands */
+    section article.graph.tmrw-mask::after {
       background-image: none;
       background-color: var(--tmrw-up);
       filter: none;
@@ -323,17 +319,18 @@ status-website:
       -webkit-mask-position: center right;
       mask-position: center right;
     }
-    .tmrw-mask section article.degraded.graph::after {
+    section article.degraded.graph.tmrw-mask::after {
       background-color: var(--tmrw-degraded);
     }
-    .tmrw-mask section article.down.graph::after {
+    section article.down.graph.tmrw-mask::after {
       background-color: var(--tmrw-down);
     }
 
     /* Tags */
-    /* #ff3300 is too light to carry white text at 10px */
+    /* #ff3300 and #9d8000 are too light to carry white text at 10px */
     .tag.down,
-    .tag.open {
+    .tag.open,
+    .tag.degraded {
       color: var(--tmrw-ink);
     }
 
@@ -386,6 +383,8 @@ status-website:
           var match = (el.style.getPropertyValue("--background") || "").match(/url\(['"]?(.+?)['"]?\)/);
           if (!match || el.dataset.maskSrc === match[1]) return;
           var src = (el.dataset.maskSrc = match[1]);
+          el.classList.remove("tmrw-mask");
+          el.style.removeProperty("--mask");
           blobs[src] =
             blobs[src] ||
             fetch(src)
@@ -396,7 +395,7 @@ status-website:
           blobs[src].then(function (url) {
             if (el.dataset.maskSrc !== src) return;
             el.style.setProperty("--mask", 'url("' + url + '")');
-            document.documentElement.classList.add("tmrw-mask");
+            el.classList.add("tmrw-mask");
           }, function () {});
         });
       }
