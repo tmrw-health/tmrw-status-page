@@ -204,16 +204,6 @@ status-website:
       text-transform: uppercase;
       color: #000;
     }
-    main > article.up:not(.link)::before {
-      content: "";
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      margin-right: 0.75rem;
-      vertical-align: 0.15em;
-      background: var(--tmrw-up);
-    }
     /* Cards */
     article {
       border-radius: 0;
